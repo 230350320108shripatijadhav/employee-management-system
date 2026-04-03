@@ -51,4 +51,10 @@ public class EmployeeController {
         service.deleteEmployee(id);
         return "Employee deleted successfully";
     }
+
+    @PutMapping("/{id}/salary")
+    public Employee updateSalary(@PathVariable Long id,
+                                 @RequestParam Double salary) {
+        return service.updateSalary(id, salary);
+    }
 }
